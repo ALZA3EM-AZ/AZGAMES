@@ -3,386 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝑺𝑯𝑶𝑷 𝑨𝒁 𝑮𝑨𝑴𝑬𝑺</title>
-    <link rel="icon" type="https://i.postimg.cc/fR9Wzp7S/1.webp" href="https://i.postimg.cc/fR9Wzp7S/1.webp"> <!-- مسار الأيقونة -->
+    <title>𝑨𝒁 𝑮𝑨𝑴𝑬𝑺</title>
+    <link rel="icon" href="https://i.postimg.cc/fR9Wzp7S/1.webp">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
             margin: 0;
             padding: 0;
-        }
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .header {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px 0;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .logo {
-            margin: 20px 0;
-        }
-        .content {
-            margin: 20px 0;
-        }
-        .content h2 {
-            color: #007BFF;
-        }
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .product-item {
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: calc(30% - 20px);
-            max-width: 300px;
-            text-align: left;
-            box-sizing: border-box;
-        }
-        .product-item img {
-            width: 100%;
-        }
-        .product-item h3 {
-            color: #007BFF;
-        }
-        .product-item .price {
-            font-size: 1.2em;
+            background-color: #f9f9f9;
             color: #333;
         }
-        .footer {
-            margin-top: 20px;
-            padding: 10px 0;
+        header {
+            background-color: #d4af37;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #d4af37, #e9c46a);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .games-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .games-section h2 {
+            margin-bottom: 20px;
+        }
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .game-card {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+        .game-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .game-card h3 {
+            min-height: 60px; /* لضمان توحيد ارتفاع العناوين */
+        }
+        .game-card p {
+            font-weight: bold;
+            margin-top: auto;
+        }
+        .game-card a {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .game-card a:hover {
+            background-color: #45a049;
+        }
+        .payment-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .payment-icons img {
+            width: 100px;
+            height: auto;
+        }
+        footer {
             background-color: #333;
             color: white;
-        }
-        .button-group {
-            margin: 20px 0;
-        }
-        .button-group a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0 10px;
-        }
-        .button-group a:hover {
-            background-color: #0056b3;
-        }
-        .pay-button {
-            margin: 20px 0;
-        }
-        .pay-button a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .pay-button a:hover {
-            background-color: #0056b3;
-        }
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(45% - 20px);
-            }
-        }
-        @media (max-width: 480px) {
-            .product-item {
-                width: 100%;
-            }
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>A̷L̷Z̷A̷3̷E̷E̷M̷</h1>
-        </div>
-        <div class="logo">
-            <img src="https://i.postimg.cc/5y6ncBc1/33a45e29-52dc-406a-97fa-44fdfbb9dafc.jpg" alt="AZ GAMES Logo" width="300">
-        </div>
-        <div class="content">
-            <p>𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝑺𝑯𝑶𝑷 𝑨𝒁 𝑮𝑨𝑴𝑬𝑺 𝗙𝗢𝗥 𝗣𝗨𝗕𝗚 𝗠𝗢𝗕𝗜𝗟𝗘.</p>
-            <p>𝑭𝑶𝑹 𝑻𝑯𝑬 𝑷𝑨𝒀𝑴𝑬𝑵𝑻 𝑳𝑰𝑵𝑲 , 𝑪𝑳𝑰𝑪𝑲 𝑶𝑵 𝑷𝑨𝒀 𝑵𝑶𝑾 𝑻𝑶 𝑪𝑶𝑵𝑻𝑨𝑪𝑻 𝑴𝑬.</p>
-            <div class="button-group">
-                <a href="https://t.me/AZGAMEES">Telegram Group</a>
-                <a href="https://chat.whatsapp.com/FDlhHyOXgQd5Cw620Q3jf9">WhatsApp Group</a>
-                <a href="https://discord.gg/Hk4nSyrzVY">Discord</a>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="product-item">
-                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP MONTH+VN">
-                <h3>OP BP MONTH + VN HAX</h3>
-                <p class="price">60 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .pay-button a {
-    display: inline-block; /* لتنسيق الرابط بشكل أفضل */
-    margin-bottom: 5px; /* إضافة مسافة أسفل زر "Pay Now" */
-  }
+    <header>
+        <h1>AZGAMES</h1>
+    </header>
+    <div style="text-align: center; background: linear-gradient(to right, #c49130, #dbb43a); padding: 10px;">
+        <img src="https://i.postimg.cc/5y6ncBc1/33a45e29-52dc-406a-97fa-44fdfbb9dafc.jpg" alt="Game Banner" style="width: 100%; max-width: 400px; border-radius: 10px;">
+    </div>
 
-  .icon {
-    width: 5px; /* عرض الأيقونة */
-    height: auto; /* الحفاظ على التناسب */
-    margin-right: 2px; /* المسافة بين الأيقونات (إن وجدت) */
-  }
-  
-  .payment-icons {
-    display: flex;
-    justify-content: center; /* لتوسيط الأيقونة */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
+    
 
-<style>
-  .price {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 20px; /* حجم النص */
-    color: #FF5722; /* لون النص لجعله ملفتًا (اختياري) */
-  }
-</style>
-
-                </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP MONTH+RED">
-                <h3>OP BP MONTH + REDEYE</h3>
-                <p class="price">50 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                    </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP MONTH+RED">
-                <h3>OP BP MONTH + NIMROD</h3>
-                <p class="price">50 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP MONTH">
-                <h3>OP BYPASS MONTH          </h3>
-                <p class="price">35 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN MONTH">
-                <h3>VN HAX MONTH            </h3>
-                <p class="price">25 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                    </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN MONTH">
-                <h3>VN HAX WEEK</h3>
-                <p class="price">15 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                    </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN MONTH">
-                <h3>VN HAX FREEZ DAY </h3>
-                <p class="price">5 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/SR5k117z/photo-2021-09-30-09-24-52.jpg" alt="RED MONTH">
-                <h3>REDEYE HACK MONTH</h3>
-                <p class="price">15 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                     </div>
-            </div>
-            <div class="product-item">
-                <img src="https://i.postimg.cc/k4b0XMxD/photo-2023-05-18-13-54-02.jpg" alt="RED MONTH">
-                <h3>NIMROD EMU OR BYPASS</h3>
-                <p class="price">15 USD</p>
-                <div class="pay-button">
-                    <a href="https://wa.me/201016004324">Pay Now</a>
-                    <div class="payment-icons">
-    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Visa" class="icon">
-  </div>
-<style>
-  .icon {
-    width: 5px; /* تصغير عرض الصورة إلى 5px */
-    height: auto; /* الحفاظ على تناسب الأبعاد */
-    margin-right: 1px; /* تقليل المسافة بين الصور */
-  }
-</style>
-<style>
-  .payment-methods {
-    font-weight: bold; /* تخانة الخط */
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-  }
-</style>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <p>&copy; 2025 𝑨𝒁 𝑮𝑨𝑴𝑬𝑺. All rights reserved.</p>
+    <div class="hero">
+        <h1 style="font-size: 2rem;">WELCOME TO SHOP AZ GAMES FOR PUBG MOBILE.</h1>
+        
+        <p><em>FOR THE PAYMENT LINK , CLICK ON PAY NOW TO CONTACT ME.</em></p>
+        <div class="social-buttons" style="margin-top: 20px;">
+            <a href="https://t.me/AZGAMEES" style="margin: 5px; padding: 10px 20px; background: linear-gradient(to right, #4CAF50, #8BC34A); color: white; text-decoration: none; border-radius: 5px;">Telegram Group</a>
+            <a href="https://chat.whatsapp.com/FDlhHyOXgQd5Cw620Q3jf9" style="margin: 5px; padding: 10px 20px; background: linear-gradient(to right, #4CAF50, #8BC34A); color: white; text-decoration: none; border-radius: 5px;">WhatsApp Group</a>
+            <a href="https://discord.gg/Hk4nSyrzVY" style="margin: 5px; padding: 10px 20px; background: linear-gradient(to right, #4CAF50, #8BC34A); color: white; text-decoration: none; border-radius: 5px;">Discord</a>
         </div>
     </div>
+
+    <section class="games-section" id="games">
+        <h2>𝑶𝑼𝑹 𝑷𝑹𝑶𝑫𝑼𝑪𝑻𝑺</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP BP MONTH + VN HAX">
+                <h3>OP BP MONTH + VN HAX</h3>
+                <p>$60</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP BP MONTH + REDEYE">
+                <h3>OP BP MONTH + REDEYE</h3>
+                <p>$50</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP BP MONTH + NIMROD">
+                <h3>OP BP MONTH + NIMROD</h3>
+                <p>$50</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/BZzDHS9M/OP.gif" alt="OP BYPASS MONTH">
+                <h3>OP BYPASS MONTH</h3>
+                <p>$35</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN HAX MONTH">
+                <h3>VN HAX MONTH</h3>
+                <p>$25</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN HAX WEEK">
+                <h3>VN HAX WEEK</h3>
+                <p>$15</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN HAX FREEZ DAY">
+                <h3>VN HAX FREEZ DAY</h3>
+                <p>$5</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/SR5k117z/photo-2021-09-30-09-24-52.jpg" alt="REDEYE HACK MONTH">
+                <h3>REDEYE HACK MONTH</h3>
+                <p>$15</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="https://i.postimg.cc/k4b0XMxD/photo-2023-05-18-13-54-02.jpg" alt="NIMROD EMU OR BYPASS">
+                <h3>NIMROD EMU OR BYPASS</h3>
+                <p>$15</p>
+                <a href="https://wa.me/201016004324">Buy Now</a>
+                <div class="payment-icons">
+                    <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+    
+    <p>&copy; 2025 𝑨𝒁 𝑮𝑨𝑴𝑬𝑺. All rights reserved.</p>
+</footer>
+<a href="https://wa.me/201016004324" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"><img src="https://i.postimg.cc/90Qg7q3x/download.jpg" alt="WhatsApp" style="width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"></a>
 </body>
 </html>
