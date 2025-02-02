@@ -18,18 +18,17 @@
             color: white;
             padding: 15px;
             text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
         }
         .hero {
             text-align: center;
-            padding: 10px 20px;
+            padding: 20px;
             background: linear-gradient(to right, #d4af37, #e9c46a);
             color: white;
         }
         .hero h1 {
             font-size: 2rem;
-        }
-        .hero p {
-            font-style: italic;
         }
         .social-buttons {
             margin-top: 20px;
@@ -46,110 +45,101 @@
             padding: 40px 20px;
             text-align: center;
         }
-        .games-section h2 {
-            margin-bottom: 20px;
-        }
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            padding: 20px;
         }
         .game-card {
             background: white;
             padding: 20px;
-            border: 1px solid #ddd;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            height: 100%;
         }
         .game-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         .game-card img {
             max-width: 100%;
+            height: 150px;
+            object-fit: cover;
             border-radius: 5px;
             transition: transform 0.3s;
         }
         .game-card img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .game-card h3 {
-            min-height: 60px;
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: #333;
         }
         .game-card p {
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-top: auto;
+            font-size: 0.9rem;
+            color: #666;
+            margin: 5px 0;
         }
-        .game-card input {
-            margin-top: 10px;
+        .game-card .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        .game-card .description {
+            font-size: 0.9rem;
+            color: #777;
+            margin: 10px 0;
+        }
+        .game-card .quantity {
+            margin: 10px 0;
+        }
+        .game-card .quantity input {
+            width: 60px;
             padding: 5px;
-            width: 50px;
             text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .game-card .total-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
         }
         .game-card button {
-            padding: 10px 15px;
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s, transform 0.3s;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px 0;
         }
         .game-card button:hover {
             background-color: #45a049;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .payment-icons {
             margin-top: 10px;
         }
-        .payment-icons img { width: 200px; height: auto; }
+        .payment-icons img {
+            width: 200px;
+            height: auto;
+        }
         .whatsapp-chat {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-        }
-        .whatsapp-chat .chat-box {
-            display: none;
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            width: 300px;
-            background: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-        }
-        .whatsapp-chat .chat-box header {
-            background-color: #25D366;
-            color: white;
-            padding: 10px;
-            border-radius: 10px 10px 0 0;
-            font-size: 16px;
-            text-align: center;
-        }
-        .whatsapp-chat .chat-box .message {
-            background: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-        .whatsapp-chat .chat-box .message.bot {
-            background: #d4edda;
-            color: #155724;
-        }
-        .whatsapp-chat .chat-box .message.user {
-            background: #d1ecf1;
-            color: #0c5460;
         }
         .whatsapp-chat img {
             width: 60px;
@@ -158,23 +148,15 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
         }
-        .whatsapp-chat .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 18px;
-            color: #fff;
-            cursor: pointer;
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
         }
     </style>
     <script>
-        function toggleChat() {
-            const chatBox = document.querySelector('.whatsapp-chat .chat-box');
-            chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
-        }
-
         function sendOrder(productName, price) {
             const quantityInput = document.getElementById(`quantity-${productName.replace(/\s+/g, '-')}`);
             if (!quantityInput) {
@@ -190,16 +172,13 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>𝑨𝒁 𝑮𝑨𝑴𝑬𝑺</h1>
-    </header>
+    <header>𝑨𝒁 𝑮𝑨𝑴𝑬𝑺</header>
     <div style="text-align: center; background: linear-gradient(to right, #c49130, #dbb43a); padding: 10px;">
         <img src="https://i.postimg.cc/5y6ncBc1/33a45e29-52dc-406a-97fa-44fdfbb9dafc.jpg" alt="Game Banner" style="width: 100%; max-width: 400px; border-radius: 10px;">
     </div>
 
     <div class="hero">
         <h1>WELCOME TO SHOP 𝑨𝒁 𝑮𝑨𝑴𝑬𝑺 FOR PUBG MOBILE.</h1>
-        <p><em></em></p>
         <div class="social-buttons">
             <a href="https://t.me/AZGAMEES">Telegram Group</a>
             <a href="https://chat.whatsapp.com/FDlhHyOXgQd5Cw620Q3jf9">WhatsApp Group</a>
@@ -213,9 +192,11 @@
             <div class="game-card">
                 <img src="https://media.giphy.com/media/zyfq9pdkYPMkGMTDFm/giphy.gif" alt="OP BP MONTH + VN HAX">
                 <h3>OP BYPASS MONTH + VN HAX</h3>
-                <p>$55</p>
-                <label for="quantity-OP-BP-MONTH-VN-HAX">Quantity:</label>
-                <input type="number" id="quantity-OP-BP-MONTH-VN-HAX" name="quantity" min="1" value="1">
+                <p class="price">$55</p>
+                <div class="quantity">
+                    <label for="quantity-OP-BP-MONTH-VN-HAX">Quantity:</label>
+                    <input type="number" id="quantity-OP-BP-MONTH-VN-HAX" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('OP BP MONTH VN HAX', 55)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -224,9 +205,11 @@
             <div class="game-card">
                 <img src="https://media.giphy.com/media/zyfq9pdkYPMkGMTDFm/giphy.gif" alt="OP BP MONTH + REDEYE">
                 <h3>OP BYPASS MONTH + REDEYE</h3>
-                <p>$45</p>
-                <label for="quantity-OP-BP-MONTH-REDEYE">Quantity:</label>
-                <input type="number" id="quantity-OP-BP-MONTH-REDEYE" name="quantity" min="1" value="1">
+                <p class="price">$45</p>
+                <div class="quantity">
+                    <label for="quantity-OP-BP-MONTH-REDEYE">Quantity:</label>
+                    <input type="number" id="quantity-OP-BP-MONTH-REDEYE" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('OP BP MONTH REDEYE', 45)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -235,9 +218,11 @@
             <div class="game-card">
                 <img src="https://media.giphy.com/media/zyfq9pdkYPMkGMTDFm/giphy.gif" alt="OP BP MONTH + NIMROD">
                 <h3>OP BYPASS MONTH + NIMROD</h3>
-                <p>$45</p>
-                <label for="quantity-OP-BP-MONTH-NIMROD">Quantity:</label>
-                <input type="number" id="quantity-OP-BP-MONTH-NIMROD" name="quantity" min="1" value="1">
+                <p class="price">$45</p>
+                <div class="quantity">
+                    <label for="quantity-OP-BP-MONTH-NIMROD">Quantity:</label>
+                    <input type="number" id="quantity-OP-BP-MONTH-NIMROD" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('OP BP MONTH NIMROD', 45)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -245,10 +230,12 @@
             </div>
             <div class="game-card">
                 <img src="https://media.giphy.com/media/zyfq9pdkYPMkGMTDFm/giphy.gif" alt="OP BYPASS MONTH">
-                <h3>OP BYPASS MONTH</h3>
-                <p>$35</p>
-                <label for="quantity-OP-BYPASS-MONTH">Quantity:</label>
-                <input type="number" id="quantity-OP-BYPASS-MONTH" name="quantity" min="1" value="1">
+                <h3>OP BYPASS MONTH NUMBER #1</h3>
+                <p class="price">$35</p>
+                <div class="quantity">
+                    <label for="quantity-OP-BYPASS-MONTH">Quantity:</label>
+                    <input type="number" id="quantity-OP-BYPASS-MONTH" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('OP BYPASS MONTH', 35)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -257,9 +244,11 @@
             <div class="game-card">
                 <img src="https://i.postimg.cc/wBksB3ht/a-ad897e71593ab99573df1ea4e0f54576.gif" alt="REDEYE HACK MONTH">
                 <h3>REDEYE HACK MONTH + WEEK FREE</h3>
-                <p>$15</p>
-                <label for="quantity-REDEYE-HACK-MONTH">Quantity:</label>
-                <input type="number" id="quantity-REDEYE-HACK-MONTH" name="quantity" min="1" value="1">
+                <p class="price">$15</p>
+                <div class="quantity">
+                    <label for="quantity-REDEYE-HACK-MONTH">Quantity:</label>
+                    <input type="number" id="quantity-REDEYE-HACK-MONTH" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('REDEYE HACK MONTH', 15)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -268,9 +257,11 @@
             <div class="game-card">
                 <img src="https://i.postimg.cc/Vs3hV6HQ/Nimrod-gif.gif" alt="NIMROD EMU OR BYPASS">
                 <h3>NIMROD X HACK FOR BYPASS + WEEK FREE</h3>
-                <p>$15</p>
-                <label for="quantity-NIMROD-X">Quantity:</label>
-                <input type="number" id="quantity-NIMROD-X" name="quantity" min="1" value="1">
+                <p class="price">$15</p>
+                <div class="quantity">
+                    <label for="quantity-NIMROD-X">Quantity:</label>
+                    <input type="number" id="quantity-NIMROD-X" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('NIMROD X', 15)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -279,9 +270,11 @@
             <div class="game-card">
                 <img src="https://i.postimg.cc/Vs3hV6HQ/Nimrod-gif.gif" alt="NIMROD EMU OR BYPASS">
                 <h3>NIMROD HACK EMU OR BP + WEEK FREE</h3>
-                <p>$15</p>
-                <label for="quantity-NIMROD-EMU-OR-BYPASS">Quantity:</label>
-                <input type="number" id="quantity-NIMROD-EMU-OR-BYPASS" name="quantity" min="1" value="1">
+                <p class="price">$15</p>
+                <div class="quantity">
+                    <label for="quantity-NIMROD-EMU-OR-BYPASS">Quantity:</label>
+                    <input type="number" id="quantity-NIMROD-EMU-OR-BYPASS" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('NIMROD EMU OR BYPASS', 15)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -290,9 +283,11 @@
             <div class="game-card">
                 <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN HAX MONTH">
                 <h3>VN HAX MONTH</h3>
-                <p>$25</p>
-                <label for="quantity-VN-HAX-MONTH">Quantity:</label>
-                <input type="number" id="quantity-VN-HAX-MONTH" name="quantity" min="1" value="1">
+                <p class="price">$25</p>
+                <div class="quantity">
+                    <label for="quantity-VN-HAX-MONTH">Quantity:</label>
+                    <input type="number" id="quantity-VN-HAX-MONTH" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('VN HAX MONTH', 25)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -301,9 +296,11 @@
             <div class="game-card">
                 <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN HAX WEEK">
                 <h3>VN HAX WEEK</h3>
-                <p>$15</p>
-                <label for="quantity-VN-HAX-WEEK">Quantity:</label>
-                <input type="number" id="quantity-VN-HAX-WEEK" name="quantity" min="1" value="1">
+                <p class="price">$15</p>
+                <div class="quantity">
+                    <label for="quantity-VN-HAX-WEEK">Quantity:</label>
+                    <input type="number" id="quantity-VN-HAX-WEEK" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('VN HAX WEEK', 15)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -312,9 +309,11 @@
             <div class="game-card">
                 <img src="https://i.postimg.cc/QdGfgkG4/download.jpg" alt="VN HAX FREEZ DAY">
                 <h3>VN HAX FREEZ DAY</h3>
-                <p>$5</p>
-                <label for="quantity-VN-HAX-FREEZ-DAY">Quantity:</label>
-                <input type="number" id="quantity-VN-HAX-FREEZ-DAY" name="quantity" min="1" value="1">
+                <p class="price">$5</p>
+                <div class="quantity">
+                    <label for="quantity-VN-HAX-FREEZ-DAY">Quantity:</label>
+                    <input type="number" id="quantity-VN-HAX-FREEZ-DAY" value="1" min="1">
+                </div>
                 <button onclick="sendOrder('VN HAX FREEZ DAY', 5)">Buy Now</button>
                 <div class="payment-icons">
                     <img src="https://i.postimg.cc/pLr1LXvx/6565656565656.png" alt="Payment Methods">
@@ -324,19 +323,11 @@
     </section>
 
     <div class="whatsapp-chat">
-        <div class="chat-box">
-            <header>
-                WhatsApp
-                <button class="close-btn" onclick="toggleChat()">×</button>
-            </header>
-            <div class="message bot">Hello 👋<br>How can I help you?</div>
-            <div class="message bot">مرحبا 👋<br>كيف يمكنني مساعدتك؟</div>
-            <button onclick="window.location.href='https://wa.me/201016004324';" style="background: #25D366; color: white; padding: 10px 15px; border: none; border-radius: 5px; width: 100%; cursor: pointer; font-size: 14px; margin-top: 10px;">Send us a message</button>
-        </div>
-        <img src="https://i.postimg.cc/90Qg7q3x/download.jpg" alt="WhatsApp" onclick="toggleChat()">
+        <img src="https://i.postimg.cc/90Qg7q3x/download.jpg" alt="WhatsApp" onclick="window.location.href='https://wa.me/201016004324'">
     </div>
-    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 0; font-family: Arial, sans-serif;">
-    <p>&copy; 2025 <strong>𝑨𝒁 𝑮𝑨𝑴𝑬𝑺</strong>. All rights reserved.</p>
-</footer>
+
+    <footer>
+        <p>&copy; 2025 <strong>𝑨𝒁 𝑮𝑨𝑴𝑬𝑺</strong>. All rights reserved.</p>
+    </footer>
 </body>
 </html>
